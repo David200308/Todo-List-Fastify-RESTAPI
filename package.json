@@ -1,0 +1,56 @@
+{
+  "name": "todo-fastify-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=development tsc -p tsconfig.json",
+    "start": "cross-env NODE_ENV=development npm run build && node dist/index.js",
+    "start:dev": "cross-env NODE_ENV=development docker-compose up -d && npm run start",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
+    "coverage": "cat ./test/coverage/lcov.info | coveralls",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{ts,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "fastify",
+    "mongo",
+    "swagger",
+    "jest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/David200308/Todo-List-Fastify-RESTAPI"
+  },
+  "dependencies": {
+    "@fastify/swagger": "^8.12.0",
+    "@fastify/swagger-ui": "^1.10.1",
+    "fastify": "^4.24.3",
+    "mongodb-memory-server": "^9.0.1",
+    "mongoose": "^7.6.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.6",
+    "@types/mongodb-memory-server": "^2.3.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "coveralls": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
+}
