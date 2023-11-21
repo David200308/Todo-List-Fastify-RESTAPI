@@ -9,7 +9,6 @@ import {
 } from './task.routes';
 import {
     getUserByIdRoute,
-    getUserByEmailRoute,
     addUserRoute,
     deleteUserRoute
 } from './user.routes';
@@ -23,7 +22,6 @@ const routes = [
 	putTaskIsCompletedRoute,
 	deleteTaskRoute,
     getUserByIdRoute,
-    getUserByEmailRoute,
     addUserRoute,
     deleteUserRoute
 ];

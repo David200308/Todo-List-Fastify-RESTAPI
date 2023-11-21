@@ -8,6 +8,7 @@ export const AddTaskSchema = {
 			content: { type: 'string' },
 			deadline: { type: 'string' },
 			isCompleted: { type: 'boolean' },
+			userId: { type: 'string' },
 		},
 	},
 	response: {
@@ -20,6 +21,7 @@ export const AddTaskSchema = {
 				content: { type: 'string' },
 				deadline: { type: 'string' },
 				isCompleted: { type: 'boolean' },
+				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},
 		},
@@ -29,14 +31,13 @@ export const AddTaskSchema = {
 export const PutTaskTitleSchema = {
 	description: 'Upstrings task title',
 	tags: ['tasks'],
-	params: {
+	querystring: {
 		type: 'object',
 		properties: {
 			id: {
-				type: 'string',
-				description: 'task Id'
+				type: 'string'
 			}
-		}
+		},
 	},
 	body: {
 		type: 'object',
@@ -54,6 +55,7 @@ export const PutTaskTitleSchema = {
 				content: { type: 'string' },
 				deadline: { type: 'string' },
 				isCompleted: { type: 'boolean' },
+				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},
 		},
@@ -63,14 +65,13 @@ export const PutTaskTitleSchema = {
 export const PutTaskContentSchema = {
 	description: 'Upstrings task content',
 	tags: ['tasks'],
-	params: {
+	querystring: {
 		type: 'object',
 		properties: {
 			id: {
-				type: 'string',
-				description: 'task Id'
+				type: 'string'
 			}
-		}
+		},
 	},
 	body: {
 		type: 'object',
@@ -88,6 +89,7 @@ export const PutTaskContentSchema = {
 				content: { type: 'string' },
 				deadline: { type: 'string' },
 				isCompleted: { type: 'boolean' },
+				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},
 		},
@@ -97,14 +99,13 @@ export const PutTaskContentSchema = {
 export const PutTaskDeadlineSchema = {
 	description: 'Upstrings task deadline',
 	tags: ['tasks'],
-	params: {
+	querystring: {
 		type: 'object',
 		properties: {
 			id: {
-				type: 'string',
-				description: 'task Id'
+				type: 'string'
 			}
-		}
+		},
 	},
 	body: {
 		type: 'object',
@@ -122,6 +123,7 @@ export const PutTaskDeadlineSchema = {
 				content: { type: 'string' },
 				deadline: { type: 'string' },
 				isCompleted: { type: 'boolean' },
+				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},
 		},
@@ -131,14 +133,13 @@ export const PutTaskDeadlineSchema = {
 export const PutTaskIsCompletedSchema = {
 	description: 'Upstrings task title',
 	tags: ['tasks'],
-	params: {
+	querystring: {
 		type: 'object',
 		properties: {
 			id: {
-				type: 'string',
-				description: 'task Id'
+				type: 'string'
 			}
-		}
+		},
 	},
 	body: {
 		type: 'object',
@@ -156,6 +157,7 @@ export const PutTaskIsCompletedSchema = {
 				content: { type: 'string' },
 				deadline: { type: 'string' },
 				isCompleted: { type: 'boolean' },
+				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},
 		},
@@ -165,14 +167,13 @@ export const PutTaskIsCompletedSchema = {
 export const GetTaskSchema = {
 	description: 'Gets a task',
 	tags: ['tasks'],
-	params: {
+	querystring: {
 		type: 'object',
 		properties: {
 			id: {
-				type: 'string',
-				description: 'Task Id'
+				type: 'string'
 			}
-		}
+		},
 	},
 	response: {
 		200: {
@@ -184,6 +185,7 @@ export const GetTaskSchema = {
 				content: { type: 'string' },
 				deadline: { type: 'string' },
 				isCompleted: { type: 'boolean' },
+				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},
 		},
@@ -193,13 +195,12 @@ export const GetTaskSchema = {
 export const DeleteTaskSchema = {
 	description: 'Deletes a task',
 	tags: ['tasks'],
-	params: {
+	querystring: {
 		type: 'object',
 		properties: {
 			id: {
-				type: 'string',
-				description: 'Task Id',
-			},
+				type: 'string'
+			}
 		},
 	},
 	response: {
@@ -212,6 +213,7 @@ export const DeleteTaskSchema = {
 				content: { type: 'string' },
 				deadline: { type: 'string' },
 				isCompleted: { type: 'boolean' },
+				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},
 		},

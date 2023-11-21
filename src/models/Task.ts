@@ -5,6 +5,7 @@ export interface ITask {
 	content: string;
 	deadline: Date;
 	isCompleted: boolean;
+	userId: string;
 }
 
 const todoSchema = new Schema<ITask>({
@@ -12,6 +13,7 @@ const todoSchema = new Schema<ITask>({
 	content: String,
 	deadline: String,
 	isCompleted: Boolean,
+	userId: String,
 });
 
 export default model<ITask>('Tasks', todoSchema);
