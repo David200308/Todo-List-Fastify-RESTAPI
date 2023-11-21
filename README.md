@@ -89,7 +89,7 @@
 
 ## MongoDB Database Design
 
-Users Document
+Users
 
 ```
 {
