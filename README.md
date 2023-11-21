@@ -37,7 +37,6 @@
   - [POST] `/api/user`
 
     - Create user
-
     - body (exam)
 
       ```json
@@ -47,21 +46,17 @@
         "email": "test@test.com"
       }
       ```
-
   - [GET] `/api/users?id=xxxxxx`
 
     - Get user information by user ID
-
   - [DELETE] `/api/user?id=xxxxxx`
 
     - Delete the user
-
 - Task API Endpoints
 
   - [POST] `/api/task`
 
     - Create task
-
     - body (example)
 
       ```json
@@ -73,27 +68,21 @@
           "userId": "655c405680da51e72edd44c9"
       }
       ```
-
   - [GET] `/api/tasks?id=xxxxxx`
 
     - Get task information by task ID
-
   - [PUT] `/api/task/update/title?id=xxxxxx`
 
     - Update the task title by task ID
-
   - [PUT] `/api/task/update/content?id=xxxxxx`
 
     - Update the task content by task ID
-
   - [PUT] `/api/task/update/deadline?id=xxxxxx`
 
     - Update the task deadline by task ID
-
   - [PUT] `/api/task/update/status?id=xxxxxx`
 
     - Update the task isCompleted status by task ID
-
   - [DELETE] `/api/task?id=xxxxxx`
 
     - Delete the task
@@ -102,24 +91,23 @@
 
 Users Document
 
-```json
+```
 {
-		title: string;
-		content: string;
-		deadline: Date;
-		isCompleted: boolean;
-		userId: string;
+	title: string;
+	content: string;
+	deadline: Date;
+	isCompleted: boolean;
+	userId: string;
 }
 ```
 
 Tasks
 
-```json
+```
 {
-		firstname: string;
-    lastname: string;
-    email: string;
-    tasks: Array<string>;
+	firstname: string;
+	lastname: string;
+	email: string;
+	tasks: Array<string>;
 }
 ```
-
