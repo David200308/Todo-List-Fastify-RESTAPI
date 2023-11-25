@@ -1,4 +1,4 @@
-# To-do List Fastify RESTFull API
+# To-do List Fastify RESTFul API
 
 ## Tech Stack
 
