@@ -52,6 +52,7 @@
   - [DELETE] `/api/user?id=xxxxxx`
 
     - Delete the user
+  
 - Task API Endpoints
 
   - [POST] `/api/task`
@@ -68,21 +69,15 @@
           "userId": "655c405680da51e72edd44c9"
       }
       ```
+    
   - [GET] `/api/tasks?id=xxxxxx`
-
+  
     - Get task information by task ID
-  - [PUT] `/api/task/update/title?id=xxxxxx`
-
-    - Update the task title by task ID
-  - [PUT] `/api/task/update/content?id=xxxxxx`
-
-    - Update the task content by task ID
-  - [PUT] `/api/task/update/deadline?id=xxxxxx`
-
-    - Update the task deadline by task ID
-  - [PUT] `/api/task/update/status?id=xxxxxx`
-
-    - Update the task isCompleted status by task ID
+    
+  - [PUT] `/api/task?id=xxxxxx`
+  
+    - Update task information by task ID
+    
   - [DELETE] `/api/task?id=xxxxxx`
 
     - Delete the task
