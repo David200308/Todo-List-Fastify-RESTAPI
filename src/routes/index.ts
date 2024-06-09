@@ -1,6 +1,7 @@
 import { 
     getTaskRoute, 
     postTaskRoute, 
+    putTaskRoute,
     deleteTaskRoute 
 } from './task.routes';
 import {
@@ -12,6 +13,7 @@ import {
 const routes = [
 	getTaskRoute,
 	postTaskRoute,
+    putTaskRoute,
 	deleteTaskRoute,
     getUserByIdRoute,
     addUserRoute,
