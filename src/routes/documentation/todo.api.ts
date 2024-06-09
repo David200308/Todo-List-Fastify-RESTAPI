@@ -28,8 +28,8 @@ export const AddTaskSchema = {
 	},
 };
 
-export const PutTaskTitleSchema = {
-	description: 'Upstrings task title',
+export const PutTaskSchema = {
+	description: 'Update a Task',
 	tags: ['tasks'],
 	querystring: {
 		type: 'object',
@@ -43,108 +43,10 @@ export const PutTaskTitleSchema = {
 		type: 'object',
 		properties: {
 			title: { type: 'string' },
-		},
-	},
-	response: {
-		200: {
-			description: 'Successful response',
-			type: 'object',
-			properties: {
-				_id: { type: 'string' },
-				title: { type: 'string' },
-				content: { type: 'string' },
-				deadline: { type: 'string' },
-				isCompleted: { type: 'boolean' },
-				userId: { type: 'string' },
-				__v: { type: 'number' },
-			},
-		},
-	},
-};
-
-export const PutTaskContentSchema = {
-	description: 'Upstrings task content',
-	tags: ['tasks'],
-	querystring: {
-		type: 'object',
-		properties: {
-			id: {
-				type: 'string'
-			}
-		},
-	},
-	body: {
-		type: 'object',
-		properties: {
 			content: { type: 'string' },
-		},
-	},
-	response: {
-		200: {
-			description: 'Successful response',
-			type: 'object',
-			properties: {
-				_id: { type: 'string' },
-				title: { type: 'string' },
-				content: { type: 'string' },
-				deadline: { type: 'string' },
-				isCompleted: { type: 'boolean' },
-				userId: { type: 'string' },
-				__v: { type: 'number' },
-			},
-		},
-	},
-};
-
-export const PutTaskDeadlineSchema = {
-	description: 'Upstrings task deadline',
-	tags: ['tasks'],
-	querystring: {
-		type: 'object',
-		properties: {
-			id: {
-				type: 'string'
-			}
-		},
-	},
-	body: {
-		type: 'object',
-		properties: {
 			deadline: { type: 'string' },
-		},
-	},
-	response: {
-		200: {
-			description: 'Successful response',
-			type: 'object',
-			properties: {
-				_id: { type: 'string' },
-				title: { type: 'string' },
-				content: { type: 'string' },
-				deadline: { type: 'string' },
-				isCompleted: { type: 'boolean' },
-				userId: { type: 'string' },
-				__v: { type: 'number' },
-			},
-		},
-	},
-};
-
-export const PutTaskIsCompletedSchema = {
-	description: 'Upstrings task title',
-	tags: ['tasks'],
-	querystring: {
-		type: 'object',
-		properties: {
-			id: {
-				type: 'string'
-			}
-		},
-	},
-	body: {
-		type: 'object',
-		properties: {
 			isCompleted: { type: 'boolean' },
+			userId: { type: 'string' },
 		},
 	},
 	response: {
@@ -153,10 +55,10 @@ export const PutTaskIsCompletedSchema = {
 			type: 'object',
 			properties: {
 				_id: { type: 'string' },
-				title: { type: 'string' },
-				content: { type: 'string' },
-				deadline: { type: 'string' },
-				isCompleted: { type: 'boolean' },
+				title: { type: 'string', optional: true },
+				content: { type: 'string', optional: true },
+				deadline: { type: 'string', optional: true },
+				isCompleted: { type: 'boolean', optional: true },
 				userId: { type: 'string' },
 				__v: { type: 'number' },
 			},

@@ -3,11 +3,8 @@ import { RouteOptions } from 'fastify';
 import { 
 	AddTaskSchema, 
 	GetTaskSchema, 
-	PutTaskTitleSchema, 
-	PutTaskContentSchema, 
-	PutTaskDeadlineSchema, 
-	PutTaskIsCompletedSchema, 
-	DeleteTaskSchema
+	DeleteTaskSchema,
+	PutTaskSchema
 } from './documentation/todo.api';
 
 // Task Routes
@@ -25,32 +22,11 @@ export const postTaskRoute: RouteOptions = {
 	schema: AddTaskSchema,
 };
 
-export const putTaskTitleRoute: RouteOptions = {
+export const putTaskRoute: RouteOptions = {
 	method: 'PUT',
-	url: '/api/task/update/title',
-	handler: todoController.updateTaskTitle,
-	schema: PutTaskTitleSchema,
-};
-
-export const putTaskContentRoute: RouteOptions = {
-	method: 'PUT',
-	url: '/api/task/update/content',
-	handler: todoController.updateTaskContent,
-	schema: PutTaskContentSchema,
-};
-
-export const putTaskDeadlineRoute: RouteOptions = {
-	method: 'PUT',
-	url: '/api/task/update/deadline',
-	handler: todoController.updateTaskDeadline,
-	schema: PutTaskDeadlineSchema,
-};
-
-export const putTaskIsCompletedRoute: RouteOptions = {
-	method: 'PUT',
-	url: '/api/task/update/status',
-	handler: todoController.updateTaskIsCompleted,
-	schema: PutTaskIsCompletedSchema,
+	url: '/api/task',
+	handler: todoController.updateTask,
+	schema: PutTaskSchema,
 };
 
 export const deleteTaskRoute: RouteOptions = {

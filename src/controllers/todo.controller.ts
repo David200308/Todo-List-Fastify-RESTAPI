@@ -33,14 +33,15 @@ export const addTask = async (req: FastifyRequest, reply: FastifyReply) => {
 	}
 };
 
-export const updateTaskTitle = async (req: FastifyRequest, reply: FastifyReply) => {
+export const updateTask = async (req: FastifyRequest, reply: FastifyReply) => {
 	try {
 		const params = req.params as { id: string };
 		const id = params.id;
-		const title = req.body as String;
-		const { ...updateData } = title;
+		const { ...updateData } = req.body as ITask;
 		
-		const update = await Task.findByIdAndUpdate(id, updateData, { new: true });
+		const update = await Task
+			.findByIdAndUpdate
+			(id, updateData, { new: true });
 
 		if (!update) {
 			return reply.status(404).send({ error: 'Task not found' });
@@ -48,64 +49,7 @@ export const updateTaskTitle = async (req: FastifyRequest, reply: FastifyReply) 
 
 		return update;
 	} catch (err) {
-		return reply.code(500).send({ error: err})
-	}
-};
-
-export const updateTaskContent = async (req: FastifyRequest, reply: FastifyReply) => {
-	try {
-		const params = req.params as { id: string };
-		const id = params.id;
-		const content = req.body as String;
-		const { ...updateData } = content;
-		
-		const update = await Task.findByIdAndUpdate(id, updateData, { new: true });
-
-		if (!update) {
-			return reply.status(404).send({ error: 'Task not found' });
-		}
-
-		return update;
-	} catch (err) {
-		return reply.code(500).send({ error: err})
-	}
-};
-
-export const updateTaskDeadline = async (req: FastifyRequest, reply: FastifyReply) => {
-	try {
-		const params = req.params as { id: string };
-		const id = params.id;
-		const deadline = req.body as Date;
-		const { ...updateData } = deadline;
-		
-		const update = await Task.findByIdAndUpdate(id, updateData, { new: true });
-
-		if (!update) {
-			return reply.status(404).send({ error: 'Task not found' });
-		}
-
-		return update;
-	} catch (err) {
-		return reply.code(500).send({ error: err})
-	}
-};
-
-export const updateTaskIsCompleted = async (req: FastifyRequest, reply: FastifyReply) => {
-	try {
-		const params = req.params as { id: string };
-		const id = params.id;
-		const isCompleted = req.body as Boolean;
-		const { ...updateData } = isCompleted;
-		
-		const update = await Task.findByIdAndUpdate(id, updateData, { new: true });
-
-		if (!update) {
-			return reply.status(404).send({ error: 'Task not found' });
-		}
-
-		return update;
-	} catch (err) {
-		return reply.code(500).send({ error: err})
+		return reply.code(500).send({ error : err})
 	}
 };
 
