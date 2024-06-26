@@ -1,7 +1,7 @@
 import * as fastify from 'fastify';
 import mongoose from 'mongoose';
 import routes from './routes';
-import { Options } from './config/swagger';
+// import { Options } from './config/swagger';
 import { config } from './config/app';
 const env = process.env.NODE_ENV;
 import fastifySwagger from '@fastify/swagger';
@@ -10,13 +10,13 @@ import fastifySwaggerUI from '@fastify/swagger-ui';
 // Configure App
 const app = fastify.default({ logger: true });
 
-app.register(fastifySwagger, Options);
+app.register(fastifySwagger);
 app.register(fastifySwaggerUI, {
 	routePrefix: '/docs',
 	uiConfig: {
 	  docExpansion: 'full',
-	  deepLinking: false
-	}
+	  deepLinking: false,
+	},
 });
 
 routes.forEach(route => {
